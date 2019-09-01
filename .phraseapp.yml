@@ -1,0 +1,45 @@
+phraseapp:
+  project_id: 70c0de20a0433940a67a9929ccee3379
+
+  push:
+    sources:
+    - file: ./Diamant/**/*_<locale_name>.properties
+      params:
+        file_format: properties
+        autotranslate: True
+        update_translations: True
+        update_descriptions: True
+        tags: main
+
+    - file: ./com.clt.<tag>/**/Resources_<locale_name>.properties
+      params:
+        autotranslate: True
+        update_translations: True
+        update_descriptions: True
+        file_format: properties
+  pull:
+    targets:
+    - file: Diamant/src/main/resources/com/clt/diamant/DiaMant_<locale_code>.properties
+      params:
+        tags: main
+        file_format: properties
+    - file: com.clt.audio/src/main/java/com/clt/audio/Resources_<locale_code>.properties
+      params:
+        tags: audio
+        file_format: properties
+    - file: com.clt.base/src/main/resources/com/clt/gui/Resources_<locale_code>.properties
+      params:
+        tags: base
+        file_format: properties
+    - file: com.clt.script/src/main/resources/com/clt/script/Resources_<locale_code>.properties
+      params:
+        tags: script
+        file_format: properties
+    - file: com.clt.speech/src/main/resources/com/clt/speech/Resources_<locale_code>.properties
+      params:
+        tags: speech
+        file_format: properties
+    - file: com.clt.xml/src/main/resources/com/clt/xml/Resources_<locale_code>.properties
+      params:
+        tags: xml
+        file_format: properties
